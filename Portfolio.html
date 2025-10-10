@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Shirke - Data Analytics Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1F2937; /* bg-gray-800 */
+            color: #F3F4F6; /* text-gray-200 */
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        /* Active/Hover underline style */
+        .nav-link.active::after, .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #6366F1; /* indigo-500 */
+        }
+
+        /* --- Project Image Styles for BIGGER IMAGE DISPLAY --- */
+        .project-img-placeholder {
+            background-color: #374151; /* bg-gray-700 */
+            border-radius: 0.5rem; /* rounded-xl equivalent */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 1rem; /* Added padding to prevent image from touching edges */
+        }
+        .project-img-placeholder img {
+            /* Ensures the image fills the container but maintains aspect ratio */
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Key to scaling without cropping */
+        }
+        /* --- END Project Image Styles --- */
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-[#2b3648] sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+    <img class="w-11 h-11 rounded-full object-cover p-0 bg-white" 
+         src="C:\Users\harsh shirke\OneDrive\Documents\Portfolio\profile.jpeg" 
+         alt="Profile picture of Harsh Shirke">
+    <h1 class="text-xl font-bold text-white">Harsh Shirke</h1>
+</div>
+
+
+            <nav class="hidden md:flex items-center space-x-8 text-gray-300">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#skills" class="nav-link">Skills Acquired</a>
+                <a href="#projects" class="nav-link">My Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                
+                <a href="https://www.linkedin.com/in/harsh-shirke-bb6551299" class="text-gray-400 hover:text-white transition" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                
+                <a href="https://github.com/Harsh77-Dev" class="text-gray-400 hover:text-white transition" target="_blank" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                </a>
+                
+                <a href="mailto:harshshirke1060@gmail.com" class="text-gray-400 hover:text-white transition" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+
+                <a href="Harsh Shirke.pdf" download="Harsh Shirke Resume.pdf" class="hidden sm:block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-md text-sm">
+                    Download Resume
+                </a>
+                
+                <div class="md:hidden">
+                    <button id="menu-btn" type="button" class="text-gray-300 hover:text-white focus:outline-none" aria-label="Toggle menu">
+                        <svg id="menu-open-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                       <svg id="menu-close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-[#2b3648]">
+            <a href="#hero" class="block py-3 px-6 text-gray-300 hover:bg-gray-700/50 transition">Home</a>
+            <a href="#skills" class="block py-3 px-6 text-gray-300 hover:bg-gray-700/50 transition">Skills Acquired</a>
+            <a href="#projects" class="block py-3 px-6 text-gray-300 hover:bg-gray-700/50 transition">My Projects</a>
+            <a href="#education" class="block py-3 px-6 text-gray-300 hover:bg-gray-700/50 transition">Education</a>
+            <a href="#certificates" class="block py-3 px-6 text-gray-300 hover:bg-gray-700/50 transition">Certificates</a>
+            <a href="Harsh Shirke.pdf" download="Harsh Shirke Resume.pdf" class="block py-3 px-6 text-indigo-400 hover:bg-gray-700/50 transition font-semibold border-t border-gray-700 mt-2 pt-4">
+                Download Resume
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20 max-w-6xl">
+
+        <section id="hero" class="mb-20">
+            <div class="grid md:grid-cols-3 gap-12 items-center">
+                <div class="md:col-span-2 order-2 md:order-1">
+                    <p class="text-xl md:text-2xl text-gray-400 mb-2">Hello, I am</p>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">Harsh Shirke</h2>
+                    <p class="text-lg text-gray-300 max-w-2xl mb-8">
+                        A **Recent Bachelor of Engineering graduate in Computer Engineering** with a strong foundation in data analysis and visualization. I excel at importing, cleaning, transforming, and modeling datasets to deliver **actionable insights**. Proficient in **Python, SQL, Excel, and Power BI**, I am ready to drive business growth through data-backed decisions.
+                    </p>
+                    <div class="grid sm:grid-cols-3 gap-4 text-white max-w-2xl">
+                        <div class="bg-indigo-600 p-6 rounded-lg text-center shadow-lg">
+                            <p class="text-4xl font-bold">11</p>
+                            <p class="text-sm uppercase tracking-wider">Core Technical Skills</p>
+                        </div>
+                        <div class="bg-indigo-600 p-6 rounded-lg text-center shadow-lg">
+                            <p class="text-4xl font-bold">4</p>
+                            <p class="text-sm uppercase tracking-wider">Detailed Projects</p>
+                        </div>
+                        <div class="bg-indigo-600 p-6 rounded-lg text-center shadow-lg">
+                            <p class="text-4xl font-bold">8.25</p>
+                            <p class="text-sm uppercase tracking-wider">B.E. CGPA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center order-1 md:order-2">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-teal-500 rounded-full blur-xl opacity-50"></div>
+                        <img src="C:\Users\harsh shirke\OneDrive\Documents\Portfolio\profile.jpeg" alt="Harsh Shirke Profile Photo" class="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-gray-700 shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        ---
+        
+        <section id="skills" class="mb-20 py-10">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-2 text-indigo-400">Technical Skills</h3>
+            <div class="w-24 h-1 bg-indigo-500 mx-auto mb-12"></div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
+                
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://img.icons8.com/color/80/000000/sql.png" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="SQL Icon">
+                    <p class="font-semibold">SQL</p>
+                </div>
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://img.icons8.com/color/80/000000/python.png" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="Python Icon">
+                    <p class="font-semibold">Python</p>
+                </div>
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://img.icons8.com/color/80/000000/power-bi.png" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="Power BI Icon">
+                    <p class="font-semibold">Power BI</p>
+                </div>
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://img.icons8.com/color/80/000000/ms-excel.png" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="Excel Icon">
+                    <p class="font-semibold">Excel</p>
+                </div>
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://img.icons8.com/color/80/000000/pandas.png" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="Pandas Icon">
+                    <p class="font-semibold">Python Pandas</p>
+                </div>
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://img.icons8.com/color/80/000000/numpy.png" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="NumPy Icon">
+                    <p class="font-semibold">Python NumPy</p>
+                </div>
+                
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://icon.icepanel.io/Technology/svg/scikit-learn.svg" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="Scikit-learn Icon">
+                    <p class="font-semibold">Scikit-learn</p>
+                </div>
+                
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://img.icons8.com/color/80/000000/matplotlib.png" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="Matplotlib Icon">
+                    <p class="font-semibold">Matplotlib</p>
+                </div>
+                
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://logo.svgcdn.com/l/seaborn-icon-8x.png" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="Seaborn Icon">
+                    <p class="font-semibold">Seaborn</p>
+                </div>
+                
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://img.icons8.com/color/80/000000/c-programming.png" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="C Language Icon">
+                    <p class="font-semibold">C Language</p>
+                </div>
+                
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://img.icons8.com/color/80/000000/javascript.png" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="JavaScript Icon">
+                    <p class="font-semibold">JavaScript</p>
+                </div>
+
+                <div class="bg-gray-700/50 p-6 rounded-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    <img src="https://img.icons8.com/color/80/000000/html-5--v1.png" class="mx-auto mb-3 rounded-lg w-16 h-16" alt="HTML/CSS Icon">
+                    <p class="font-semibold">HTML/CSS</p>
+                </div>
+                
+            </div>
+            
+            <h4 class="text-2xl font-bold text-center mt-12 mb-6 text-indigo-400">Data & Soft Skills</h4>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-indigo-600 text-white font-medium px-4 py-2 rounded-full shadow-md">Data Cleaning & Transformation</span>
+                <span class="bg-indigo-600 text-white font-medium px-4 py-2 rounded-full shadow-md">Data Validation & Reporting</span>
+                <span class="bg-indigo-600 text-white font-medium px-4 py-2 rounded-full shadow-md">Problem Solving & Critical Thinking</span>
+                <span class="bg-indigo-600 text-white font-medium px-4 py-2 rounded-full shadow-md">Business Acumen & Self-learning</span>
+            </div>
+        </section>
+
+        ---
+        
+        <section id="projects" class="py-10">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-2 text-indigo-400">My Projects</h3>
+            <div class="w-24 h-1 bg-indigo-500 mx-auto mb-12"></div>
+            
+            <div class="bg-[#2b3648] rounded-xl shadow-2xl p-6 md:p-10 mb-10 overflow-hidden transform hover:scale-[1.01] transition duration-300">
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="md:col-span-1">
+                        <h4 class="text-3xl font-bold text-white mb-2">Movies Performance Dashboard</h4>
+                        <p class="text-sm text-gray-400 mb-4">Power BI Visualization Project</p>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Designed and built a comprehensive **Power BI Dashboard** to analyze movie performance based on key metrics like Box Office earnings, Budget, Profit, ROI, and Rating Average.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 mb-6 space-y-2 pl-4">
+                            <li>Visualized profit trends over time, profit distribution by country (USA, UK, India), and breakdown by Genre Rating Category.</li>
+                            <li>Demonstrates strong proficiency in **Business Intelligence** and interactive reporting.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Power BI</span>
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Data Visualization</span>
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Excel</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-img-placeholder h-64 md:h-80 lg:h-96 md:col-span-1">
+                        <img src="C:\Users\harsh shirke\OneDrive\Documents\Portfolio\movies_dashboard.png"
+                             class="w-full h-full object-contain rounded-lg shadow-lg"
+                             alt="Power BI Dashboard Visual">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#2b3648] rounded-xl shadow-2xl p-6 md:p-10 mb-10 overflow-hidden transform hover:scale-[1.01] transition duration-300">
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    
+                    <div class="project-img-placeholder h-64 md:h-80 lg:h-96 md:col-span-1 order-1">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920364.png" 
+                             class="w-full h-full object-contain rounded-lg shadow-lg" 
+                             alt="Influencer Impact Analysis Icon">
+                    </div>
+
+                    <div class="md:col-span-1 order-2">
+                        <h4 class="text-3xl font-bold text-white mb-2">Top Instagram Influencers Data Analysis</h4>
+                        <p class="text-sm text-gray-400 mb-4">June 2023</p>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Conducted end-to-end data analysis on Instagram influencer metrics to understand engagement and influence patterns. Cleaned, preprocessed, engineered features, and visualized trends. Built **Random Forest Regressor** to predict influence scores and a **Random Forest Classifier** to categorize engagement levels, achieving high accuracy.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Python</span>
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Pandas</span>
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Scikit-learn</span>
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#2b3648] rounded-xl shadow-2xl p-6 md:p-10 mb-10 overflow-hidden transform hover:scale-[1.01] transition duration-300">
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="md:col-span-1">
+                        <h4 class="text-3xl font-bold text-white mb-2">Green Destination Attrition Analysis</h4>
+                        <p class="text-sm text-gray-400 mb-4">Feb 2025</p>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Analyzed employee attrition patterns to identify factors influencing retention at Green Destination. Explored relationships between attrition, age, years at company, and income through statistical and visual analysis. Conducted **correlation analysis** to determine significant predictors of employee turnover.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Python</span>
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Pandas</span>
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">HR Analytics</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-img-placeholder h-64 md:h-80 lg:h-96 md:col-span-1">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3061/3061329.png" 
+                             class="w-full h-full object-contain rounded-lg shadow-lg" 
+                             alt="Employee Attrition Analysis Icon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#2b3648] rounded-xl shadow-2xl p-6 md:p-10 mb-10 overflow-hidden transform hover:scale-[1.01] transition duration-300">
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    
+                    <div class="project-img-placeholder h-64 md:h-80 lg:h-96 md:col-span-1 order-1">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1792/1792193.png" 
+                             class="w-full h-full object-contain rounded-lg shadow-lg" 
+                             alt="Stock Market Analysis Icon">
+                    </div>
+
+                    <div class="md:col-span-1 order-2">
+                        <h4 class="text-3xl font-bold text-white mb-2">Feared Stock Analysis (Fear-Greed Index)</h4>
+                        <p class="text-sm text-gray-400 mb-4">April 2023</p>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Conducted data analysis on merged trader performance and Fear-Greed Index datasets. Performed data cleaning, transformation, and visualization. Analyzed sentiment distribution, PnL trends. Computed correlation, finding **minimal linear dependency** between the Fear-Greed Index value and Closed PnL.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Python</span>
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Financial Analysis</span>
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Seaborn</span>
+                            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-4 py-1.5 rounded-full">Google Colab</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        ---
+        
+        <section id="education" class="py-10">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-2 text-indigo-400">Education</h3>
+            <div class="w-24 h-1 bg-indigo-500 mx-auto mb-12"></div>
+            
+            <div class="bg-[#2b3648] rounded-xl shadow-lg p-8 md:p-12 max-w-4xl mx-auto space-y-6">
+                
+                <div class="border-b border-gray-700 pb-4">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-xl font-bold text-white">B.E. in Computer Engineering</h4>
+                        <p class="text-indigo-400 font-semibold">2021 - 2025</p>
+                    </div>
+                    <p class="text-gray-400">Pillai HOC College of Engineering and Technology, Rasayani</p>
+                    <p class="text-gray-300 mt-1">CGPA: **8.25**</p>
+                </div>
+                
+                <div class="border-b border-gray-700 pb-4">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-xl font-bold text-white">HSC (12th Grade)</h4>
+                        <p class="text-indigo-400 font-semibold">2020 - 2021</p>
+                    </div>
+                    <p class="text-gray-400">J.N.V. Raigad, Nizampur, Mangaon</p>
+                    <p class="text-gray-300 mt-1">Percentage: **91.4%**</p>
+                </div>
+                
+                <div class="pb-4">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-xl font-bold text-white">SSC (10th Grade)</h4>
+                        <p class="text-indigo-400 font-semibold">2018 - 2019</p>
+                    </div>
+                    <p class="text-gray-400">J.N.V. Raigad, Nizampur, Mangaon</p>
+                    <p class="text-gray-300 mt-1">Percentage: **93.6%**</p>
+                </div>
+                
+            </div>
+        </section>
+
+        ---
+
+        <section id="certificates" class="py-10">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-2 text-indigo-400">Certificates</h3>
+            <div class="w-24 h-1 bg-indigo-500 mx-auto mb-12"></div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                
+                <div class="bg-[#2b3648] rounded-xl shadow-lg p-6 text-center hover:bg-gray-700/50 transition">
+                    <h4 class="text-xl font-bold text-white mb-1">Data Analyst: Professional Certificate in Data Analysis</h4>
+                    <p class="text-gray-400">Udemy (30 Total Hours)</p>
+                    <p class="text-sm text-indigo-400 mt-2 mb-4">Feb 23, 2025</p>
+                    
+                    <a href="UC-dab21fa6-1255-47e7-90db-ef3244ecfc10.pdf" target="_blank" 
+                        class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-md">
+                        View PDF
+                    </a>
+                </div>
+                
+                <div class="bg-[#2b3648] rounded-xl shadow-lg p-6 text-center hover:bg-gray-700/50 transition">
+                    <h4 class="text-xl font-bold text-white mb-1">Data Science & Analytics</h4>
+                    <p class="text-gray-400">HP LIFE Foundation</p>
+                    <p class="text-sm text-indigo-400 mt-2 mb-4">Feb 18, 2025</p>
+                    
+                    <a href="HP.pdf" target="_blank" 
+                        class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-md">
+                        View PDF
+                    </a>
+                </div>
+
+                <div class="bg-[#2b3648] rounded-xl shadow-lg p-6 text-center hover:bg-gray-700/50 transition">
+                    <h4 class="text-xl font-bold text-white mb-1">Basic of Python Programming</h4>
+                    <p class="text-gray-400">Open Weaver</p>
+                    <p class="text-sm text-indigo-400 mt-2 mb-4">May 03, 2023</p>
+                    
+                    <a href="30886979973878.pdf" target="_blank" 
+                        class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 shadow-md">
+                        View PDF
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#2b3648] text-center p-6 mt-20">
+        <p class="text-gray-400">&copy; 2025 Harsh Shirke. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('menu-open-icon');
+        const closeIcon = document.getElementById('menu-close-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                // Check if the link is not the resume button (to allow the download to start)
+                if (!link.hasAttribute('download')) {
+                    mobileMenu.classList.add('hidden');
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            });
+        });
+
+        // Simple script to handle active navigation link based on scroll position
+        const sections = document.querySelectorAll('#hero, #skills, #projects, #education, #certificates');
+        const navLinks = document.querySelectorAll('header nav a');
+
+        const updateActiveLink = () => {
+            let currentSection = 'hero';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // Offset of 75px to account for sticky header height
+                if (window.pageYOffset >= sectionTop - 75) {	
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(currentSection)) {
+                    link.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', updateActiveLink);
+        document.addEventListener('DOMContentLoaded', updateActiveLink); // Set active link on page load
+    </script>
+</body>
+</html>
